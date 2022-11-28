@@ -14,6 +14,7 @@ class CreateCelebrationService{
         const celebrationRepository = getCustomRepository(CelebrationRepository)
         const celebrationExist = await celebrationRepository.findByDay(day)
         if(celebrationExist){
+            console.log('A solenidade já foi registrada neste dia')
             throw new AppError('A solenidade já foi registrada neste dia', 400)
         }
         const newCelebration = celebrationRepository.create({

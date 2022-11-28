@@ -11,5 +11,14 @@ class CelebrationRepository extends Repository<Celebration>{
         })
         return celebration
     }
+    
+    public async findByUuid(id: string): Promise<Celebration | undefined>{
+        let celebration = await this.findOne({
+            where: {
+                id
+            }
+        })
+        return celebration
+    }
 }
 export default CelebrationRepository
