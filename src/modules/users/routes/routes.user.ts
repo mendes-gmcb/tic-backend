@@ -7,5 +7,6 @@ const controllerUser = new UserController()
 routerUser.post('/', controllerUser.create)
 routerUser.get('/', isAuthenticated, controllerUser.list)
 routerUser.get('/show', isAuthenticated, controllerUser.show)
+routerUser.put('/', isAuthenticated, controllerUser.update)
 
 export default routerUser
